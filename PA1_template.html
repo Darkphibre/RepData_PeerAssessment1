@@ -135,7 +135,8 @@ data.raw = read.csv(unz(&quot;activity.zip&quot;, &quot;activity.csv&quot;), hea
 <h2>What is mean total number of steps taken per day?</h2>
 <pre class="r"><code>steps.mean = mean(data.raw$steps, na.rm = TRUE)
 steps.sum = sum(data.raw$steps, na.rm = TRUE)</code></pre>
-<p><em>This next number was requested on the course website, but not in the github instructions?</em> Excluding NA’s, the total number of steps is <strong>570608</strong>.</p>
+<p><em>This next number was requested on the course website, but not in the github instructions?</em></p>
+<p>Excluding NA’s, the total number of steps is <strong>570608</strong>.</p>
 <div id="total-number-of-steps-taken-each-day" class="section level3">
 <h3>Total number of steps taken each day:</h3>
 <pre class="r"><code>data.summary = data.raw %&gt;% 
@@ -181,6 +182,7 @@ dailyfilledmedian = median(data.summaryfilled$Total)</code></pre>
 </div>
 <div id="are-there-differences-in-activity-patterns-between-weekdays-and-weekends" class="section level2">
 <h2>Are there differences in activity patterns between weekdays and weekends?</h2>
+<p>Yes, the weekday ramps up more quickly, and the weekend has higher activity in the evenings:</p>
 <pre class="r"><code>data.weekdaysummary = data.filled %&gt;% 
         mutate(wd = weekdays(as.POSIXct(date))) %&gt;%
         group_by(wd=ifelse(wd==&quot;Saturday&quot;,&quot;weekend&quot;, ifelse(wd==&quot;Sunday&quot;,&quot;weekend&quot;,&quot;weekday&quot;)), interval) %&gt;%

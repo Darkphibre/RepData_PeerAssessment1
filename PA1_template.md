@@ -30,6 +30,7 @@ steps.sum = sum(data.raw$steps, na.rm = TRUE)
 ```
 
 *This next number was requested on the course website, but not in the github instructions?*
+
 Excluding NA's, the total number of steps is **570608**.
 
 ###Total number of steps taken each day:
@@ -103,6 +104,7 @@ dailyfilledmedian = median(data.summaryfilled$Total)
 With projected NAs, the mean number of daily steps was **10766.189** (a difference of **0**), and the daily median was **10765** (a difference of **1.189**).
 
 ## Are there differences in activity patterns between weekdays and weekends?
+Yes, the weekday ramps up more quickly, and the weekend has higher activity in the evenings:
 
 ```r
 data.weekdaysummary = data.filled %>% 

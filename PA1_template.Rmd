@@ -26,6 +26,7 @@ steps.sum = sum(data.raw$steps, na.rm = TRUE)
 ```
 
 *This next number was requested on the course website, but not in the github instructions?*
+
 Excluding NA's, the total number of steps is **`r steps.sum`**.
 
 ###Total number of steps taken each day:
